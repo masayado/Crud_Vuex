@@ -1,0 +1,3 @@
+usuario: user@micorreo.cl
+contraseña:123456
+link repositorio: https://github.com/masayado/Auth_Firebase
