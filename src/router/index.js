@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '@/views/Login.vue'
+import Users from '@/views/Users.vue'
 import firebase from 'firebase'
 
 Vue.use(VueRouter)
@@ -27,6 +28,14 @@ const routes = [
     path:'/login',
     name: 'Login',
     component: Login,
+  },
+  {
+    path: '/users',
+    name: 'Users',
+    component: Users,
+    meta:{
+      authenticated:true,
+    }
   },
   {
     path: '/about',

@@ -1,3 +1,3 @@
 import {firebaseApp} from './firebaseInit.js'
 
-export const dB = firebaseApp.firestore();
+export const db = firebaseApp.firestore();
