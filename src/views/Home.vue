@@ -2,8 +2,13 @@
   <div class="home">
     <button @click="logout">Salir</button><br>
     <br>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/users">Users</router-link> 
+    </div>
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Creación de CRUD mediante Vuex"/>
+
   </div>
 </template>
 
@@ -32,6 +37,20 @@ export default {
 </script>
 
 <style scoped>
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+
 button{
     border-radius: 30px;
     padding: 10px 20px;

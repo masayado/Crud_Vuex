@@ -1,5 +1,9 @@
 <template>
     <div>
+        <div id="nav">
+            <router-link to="/">Home</router-link> |
+            <router-link to="/users">Users</router-link> 
+        </div>
         <img :src="form.image" width="150" alt="img">
         <form>
             <label for="">Edit</label>
@@ -98,4 +102,17 @@ export default {
         display:inline-block;
         vertical-align: top;
     }
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
 </style>

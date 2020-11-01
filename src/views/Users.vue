@@ -1,5 +1,10 @@
 <template>
     <div>
+        <div id="nav">
+            <router-link to="/">Home</router-link> |
+            <router-link to="/users">Users</router-link> 
+        </div>
+
         <h1>Users</h1>
 
         <div class="users">
@@ -10,7 +15,9 @@
                 </li>
             </ul>
         </div>
-
+        <div id="nav">
+            <button><router-link to="/user">Create User</router-link></button>
+        </div>
     </div>
 </template>
 
@@ -43,4 +50,32 @@ export default {
         width:200px;
         padding:20px;
     }
+
+    #nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+
+button{
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #42b983;
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
+
+button:hover{
+  background-color:gray;
+}
 </style>

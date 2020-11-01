@@ -1,5 +1,9 @@
 <template>
         <div>
+        <div id="nav">
+            <router-link to="/">Home</router-link> |
+            <router-link to="/users">Users</router-link> 
+        </div>
             <h1>Add User</h1>
         <img :src="form.image" width="150" alt="img">
         <form>
@@ -54,5 +58,16 @@ export default {
 </script>
 
 <style scoped>
-    
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
 </style>
