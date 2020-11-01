@@ -15,6 +15,7 @@
             <label for="">Image</label>
             <input type="text" v-model="form.image" :disabled="!edit"><br>
             <button @click.prevent="editUser" :disabled="!edit">Edit</button>
+            <button @click.prevent="destroyUser">Delete</button>
         </form>
     </div>
 </template>
@@ -71,7 +72,19 @@ export default {
                 console.log(error)
             })
         },
-        ...mapActions(['fetchIdUser', 'updateUser'])
+        destroyUser(){
+            let res = confirm("Are you sure you want to delete this User?")
+
+            if(!res) return //guardia
+
+            this.deleteUser(this.id).then(()=>{
+                alert("User deleted");
+                this.$router.push("/users")
+            }).catch(error=>{
+                console.log(error)
+            })
+        },
+        ...mapActions(['fetchIdUser', 'updateUser', 'deleteUser'])
     },
     //components: {},
     created(){
