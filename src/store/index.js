@@ -31,6 +31,23 @@ export default new Vuex.Store({
           commit('ADD_USER', doc)
         })
       })
+    },
+    fetchIdUser({},id_user){
+      return db.collection('users').doc(id_user).get()
+    },
+    updateUser({},user){
+      return db.collection('users').doc(user.id).update(user)
+    },
+    addUser({},user){
+      return db.collection('users').add(user)
+    },
+    deleteUser({},id_user){
+      return db.collection('users').doc(id_user).delete()
+    }
+  },
+  getters:{
+    getUser:(state)=>(id_user)=>{
+      return state.users.find(user=>user.id == id_user)
     }
   },
   modules: {

@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '@/views/Login.vue'
 import Users from '@/views/Users.vue'
+import User from '@/components/User.vue'
+import CreateUser from '@/components/CreateUser.vue'
 import firebase from 'firebase'
 
 Vue.use(VueRouter)
@@ -33,6 +35,23 @@ const routes = [
     path: '/users',
     name: 'Users',
     component: Users,
+    meta:{
+      authenticated:true,
+    }
+  },
+  {
+    path: '/users/:id',
+    name: 'User',
+    component: User,
+    props: true,
+    meta:{
+      authenticated:true,
+    }
+  },
+  {
+    path: '/user',
+    name: 'AddUser',
+    component:CreateUser,
     meta:{
       authenticated:true,
     }
